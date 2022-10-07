@@ -1,0 +1,18 @@
+syntax = "proto3";
+package meow.dex;
+
+import "gogoproto/gogo.proto";
+import "dex/params.proto";
+import "dex/pool.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "meow/x/dex/types";
+
+// GenesisState defines the dex module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  string port_id = 2;
+  repeated Pool poolList = 3 [(gogoproto.nullable) = false];
+  uint64 poolCount = 4;
+  // this line is used by starport scaffolding # genesis/proto/state
+}

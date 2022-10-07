@@ -1,0 +1,14 @@
+syntax = "proto3";
+package meow.dex;
+
+option go_package = "meow/x/dex/types";
+import "gogoproto/gogo.proto"; 
+import "cosmos/base/v1beta1/coin.proto"; 
+
+message Pool {
+  uint64 id = 1;
+  cosmos.base.v1beta1.Coin amount = 2 [(gogoproto.nullable) = false]; 
+  string desc = 3; 
+  int32 height = 4; 
+  string creator = 5;
+}
